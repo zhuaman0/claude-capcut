@@ -17,3 +17,6 @@ Video generation prompts and motion-design specs.
 - [`reference/together-ai-teardown.md`](reference/together-ai-teardown.md)
   — frame-by-frame teardown of the together.ai product demo: beat sheet, sampled
   colour values, and the three text-motion mechanics the Jasper spec reproduces.
+- [`prompts/seedance-2-5/jasper-systems.md`](prompts/seedance-2-5/jasper-systems.md)
+  — 10s, 16:9 black-and-white wireframe network ad. One unbroken camera move with
+  continuous zoom, a fixed HUD frame, and a cursor acting as the Jasper agent.
