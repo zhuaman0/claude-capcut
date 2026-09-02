@@ -20,3 +20,6 @@ Video generation prompts and motion-design specs.
 - [`prompts/seedance-2-5/jasper-systems.md`](prompts/seedance-2-5/jasper-systems.md)
   — 10s, 16:9 black-and-white wireframe network ad. One unbroken camera move with
   continuous zoom, a fixed HUD frame, and a cursor acting as the Jasper agent.
+- [`prompts/seedance-2-5/jasper-product-reel.md`](prompts/seedance-2-5/jasper-product-reel.md)
+  — 10s, 16:9 fast-cut 3D product reel. Warm orange rim light on near-black, a
+  tumbling phone, and two-tone spec callouts punching down from overscan.
