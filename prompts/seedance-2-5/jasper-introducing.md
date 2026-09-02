@@ -1,115 +1,83 @@
 # Jasper — "Introducing" (10s, 16:9)
 
-A condensed remake of the together.ai reference in Jasper's brand, built as a
-**hybrid**: Seedance renders the void, the floating 3D roster panel, the camera
-moves and the motion blur — **all kinetic type is composited in CapCut**, where
-the word-cascade can be controlled to the frame.
+**Platform: Higgsfield → Seedance 2.5.**
 
-Read [`reference/together-ai-teardown.md`](../../reference/together-ai-teardown.md)
-first — this document assumes its colour values and motion mechanics.
-
-**Copy:** `Introducing` → `Jasper [SHIFTS]` → `Simple, instant scheduling` →
-`for teams of any size` → `Every shift covered.`
+> ## ⚠️ Paste ONLY the fenced block in §1.
+>
+> Nothing else in this file goes in the prompt box. Not the headings, not the
+> explanations, not the section below it. Higgsfield has a single prompt field
+> and no negative-prompt field — anything you paste is read as a *request*.
 
 ---
 
-## Part 1 — Seedance 2.5
+## 1. The prompt
+
+Copy everything between the fences. Nothing above it, nothing below it.
+
+```
+A calm, high-end product animation on a pure white background, edge to edge, bright and airy, with no gradient and no vignette.
+
+Shot 1, zero to 2.4 seconds: an empty white void. One enormous, extremely soft, very faint grey shadow bleeds in from just beyond the lower right edge of frame, as though a large object were floating just out of shot. The camera pushes in extremely slowly. The frame is otherwise completely empty.
+
+Shot 2, 2.4 to 7.6 seconds: a large white interface panel with softly rounded corners rises smoothly into frame from the lower left, travelling along its own tilted axis, rotated about 8 degrees anticlockwise and angled in perspective so its right edge recedes from camera. Its top strip is a clean empty white bar. A narrow pale grey sidebar, colour #F1F2F5, runs down its left side, divided into plain unmarked rounded shapes. The main body is a weekly schedule grid, seven columns by six rows, filled with small blank rounded rectangles in tints of electric blue #0A6BFF, some solid, some half strength, some very pale, mixed with neutral grey ones. Every surface is smooth and unmarked. The blocks fade in one row at a time, top row first, each row slightly behind the last. The camera pulls back slowly and continuously; the panel shrinks and settles into the right two thirds of frame while the left third of frame stays empty white. The panel carries one large, very soft, low opacity shadow offset down and to the right.
+
+Shot 3, 7.6 to 10 seconds: cut to empty white. Centred in frame, a simple flat vector icon: a dark navy #1E2737 rounded calendar page with a small electric blue circle overlapping its lower right corner, holding a white checkmark. Two concentric pale blue rings, #F0F6FE outer and #E4EDFD inner, expand outward from behind the icon in a slow staggered ripple and hold. The lower third of frame stays empty white. The camera eases to a complete stop and holds perfectly still.
+
+Throughout, every move is a single continuous slow camera drift with heavy ease-out, decelerating over a long tail into a settle, with soft natural motion blur. No bounce, no overshoot, no camera shake. The palette is limited to white, a light grey ramp and one electric blue. Every panel surface is smooth, blank and unmarked.
+```
 
 ### Settings
 
-| Setting | Value |
+Your settings in the screenshot were already correct — keep them:
+
+**10s · 16:9 · 1080p · Bitrate High · Unlimited mode OFF**
+
+Leave the reference/image slot empty. A style reference will fight the pure
+white void.
+
+---
+
+## 2. Why the first attempt failed
+
+Worth understanding, because it governs every prompt you write on this platform.
+
+**The whole markdown file went into the prompt box.** The model was handed the
+words `together.ai`, `What's on your mind?`, `CHAT`, and a full description of
+together.ai's sidebar — so it rebuilt together.ai's interface. It was following
+instructions precisely; the instructions were just wrong.
+
+**The negative prompt became a positive one.** Higgsfield exposes no negative
+field. The list started `text, words, letters, letterforms, typography,
+headline, caption` — which, read as a request, is an order for exactly the
+garbled type that came back.
+
+### The rule this gives you
+
+**Never name a thing you do not want.** Video models have no reliable "not"
+operator; naming an object tends to summon it whatever word sits in front of it.
+
+So the prompt above never uses the words *text*, *letters*, *words*, *label* or
+*logo* even once. Emptiness is described **affirmatively** instead:
+
+| Instead of | Write |
 |---|---|
-| Model | Seedance 2.5 |
-| Aspect ratio | 16:9 |
-| Duration | 10s |
-| Resolution | 1080p minimum, 2K preferred (you are compositing type over this) |
-| Frame rate | 30 fps if offered, to match the reference cadence and simplify frame-aligning the type |
-| Reference image | None. A style reference will fight the pure-white void. |
-| Seed | Lock as soon as the panel move reads correctly. |
+| "no text on the panel" | "every surface is smooth and unmarked" |
+| "empty header with no logo" | "its top strip is a clean empty white bar" |
+| "grid blocks with no labels" | "small blank rounded rectangles" |
+| "no sidebar menu text" | "plain unmarked rounded shapes" |
 
-### PASTE-READY PROMPT
+Motion negations (`no bounce`, `no overshoot`, `no camera shake`) are safe —
+those are behaviours, not objects, and won't be rendered as things.
 
 ---
 
-**GLOBAL STYLE (all shots):** Clean product-marketing animation on a **pure
-white background (#FFFFFF), edge to edge, no gradient, no vignette, no texture.**
-Bright, airy, high-key. The only colours in frame are white, a light grey ramp
-(#F1F2F5 panel fills, #D2D2D7 mid grey, #333336 dark grey) and a single electric
-accent blue (#0A6BFF). **No black anywhere. No second accent colour. No warm
-tones.** Objects are flat 2.5D interface panels — crisp rounded rectangles with
-24px corner radii — floating in empty white space, each carrying a large, very
-soft, low-opacity drop shadow offset down and to the right, with no hard edges
-and no contact shadow. Shallow depth of field with gentle falloff at the frame
-edges. Subtle natural motion blur on every fast move.
+## 3. CapCut compositing
 
-**CRITICAL — NO READABLE TEXT ANYWHERE IN FRAME.** All interface copy is
-rendered as tiny abstract grey marks and dashes, far too small to read, pure
-visual texture only. No headlines, no words, no letterforms, no numbers, no
-logos, no watermarks at any size.
+The plate comes back with no type on it by design. Every word goes on here,
+where the cascade can be controlled to the frame.
 
-**MOTION LANGUAGE:** Every move is one continuous slow camera drift with heavy
-ease-out — fast at the start, decelerating over a long tail, settling to a stop.
-**No bounce, no overshoot, no springiness, no camera shake, no handheld, no
-whip pans, no linear robotic motion.** The feeling is a calm, expensive Apple
-keynote, not energetic motion graphics.
-
-**SHOT 1 (0.0–2.4s) — Empty plate.**
-An empty pure-white void. A single enormous, extremely soft, very faint grey
-shadow bleeds in from just beyond the lower-right edge of frame, as though a
-large object is floating out of shot, breathing almost imperceptibly. The camera
-pushes in extremely slowly. Nothing else in frame. Calm, patient, minimal.
-
-**SHOT 2 (2.4–7.6s) — The roster panel.**
-A large white interface panel with softly rounded corners rises smoothly into
-frame from the lower left, travelling along its own tilted axis. It is rotated
-roughly 8 degrees anticlockwise and angled slightly in perspective so its right
-edge recedes away from camera. **The panel's top-left header bar is completely
-empty — a clean blank white strip with nothing in it.** Down the left of the
-panel runs a narrow light grey sidebar (#F1F2F5). The main body is a weekly
-schedule grid: seven vertical columns crossed by horizontal rows, filled with
-small rounded rectangular blocks in varying tints of the accent blue — some
-solid #0A6BFF, some at half strength, some pale, interspersed with neutral grey
-blocks. The blocks fade in one row at a time in a staggered cascade, top row
-first, each row a fraction behind the last. The camera pulls back slowly and
-continuously throughout, the panel shrinking and settling into the right two
-thirds of frame. **The entire left third of frame stays completely empty white.**
-In the final second the panel drifts gently up and to the left, beginning to
-leave frame, with soft motion blur trailing it.
-
-**SHOT 3 (7.6–10.0s) — End card.**
-Cut to empty white. Centred in frame, a simple flat vector icon assembles: a
-dark navy (#1E2737) calendar page with softly rounded corners, a small circular
-accent-blue (#0A6BFF) badge overlapping its lower-right corner carrying a white
-checkmark. Two concentric pale blue rings (#F0F6FE outer, #E4EDFD inner) expand
-outward from behind the icon in a slow, smooth, staggered ripple and hold. The
-lower third of frame stays completely empty white. The camera eases to a
-complete stop and holds perfectly still on the final composition.
-
----
-
-### NEGATIVE PROMPT
-
-```
-text, words, letters, letterforms, typography, headline, caption, subtitle,
-readable text, large text, numbers, logo, wordmark, watermark, signature,
-black, dark background, off-white background, cream, beige, gradient
-background, vignette, second accent color, orange, green, red, purple,
-saturated colors, neon, harsh shadows, hard shadow edges, contact shadow,
-3D render, glossy, metallic, glass, reflections, camera shake, handheld,
-jitter, bounce, overshoot, springy motion, whip pan, zoom burst, glitch,
-lens flare, film grain, noise, low resolution, cluttered, busy composition,
-people, hands, cursor, mouse
-```
-
-> **Why the type is banned outright.** The word-cascade is the whole aesthetic,
-> and it requires per-word opacity control that Seedance has no way to express.
-> Asking for the type and getting an approximation is worse than asking for
-> nothing, because you cannot composite clean type over garbled model text — you
-> would have to mask it out. A clean plate is worth far more than a lucky roll.
-
----
-
-## Part 2 — CapCut compositing
+**Copy:** `Introducing` → `Jasper [SHIFTS]` → `Simple, instant scheduling` →
+`for teams of any size` → `Every shift covered.`
 
 ### Type setup
 
@@ -122,7 +90,7 @@ people, hands, cursor, mouse
 | Accent blue | `#0A6BFF` |
 | Easing | Custom bezier on every keyframe: **`cubic-bezier(0.22, 1, 0.36, 1)`** (quint-out). If CapCut only offers presets, use "Ease Out" at maximum strength. Never leave anything on Linear. |
 
-### The two-layer trick — how to get grey→dark in CapCut
+### The two-layer trick — grey→dark in CapCut
 
 CapCut cannot animate text colour over time. Reproduce it with **two stacked
 copies of the same word**, identical in font, size and position:
@@ -132,32 +100,32 @@ copies of the same word**, identical in font, size and position:
    over 0.20s, beginning 0.06s after the grey layer.
 
 The grey reads first, the dark resolves over it, and the eye sees a colour
-shift. Build one word as a group, then duplicate and re-time it for every word
-in the piece. This single trick is most of the reference's magic.
+shift. Build one word as a group, then duplicate and re-time for every word.
+This single trick is most of the reference's magic.
 
 **Hero-word variant:** same stack, but the lower layer is `#0A6BFF` at 300%
 scale, and the upper `#333336` layer fades in only as the group finishes scaling
-down. The colour appears to shift blue→dark through the scale move.
+down — the colour appears to shift blue→dark through the scale move.
 
 ### Timeline
 
-Times in seconds against the 10s Seedance plate.
+Times in seconds against the 10s plate.
 
 | In | Out | Element | Move |
 |---|---|---|---|
 | 0.15 | 0.78 | `Introducing` | Typewriter, ~17 chars/sec, centred so it grows outward from the middle. Thin caret trailing the last glyph, blinking at 1.5Hz. |
 | 0.78 | 1.35 | `Introducing` | Hold. Caret keeps blinking. |
-| 1.35 | 1.60 | `Introducing` | Exit: per-glyph scattered dissolve with a touch of blur. Set each letter as its own layer and stagger the fades in **random** order, not left to right. |
+| 1.35 | 1.60 | `Introducing` | Exit: per-glyph scattered dissolve with a touch of blur. Each letter its own layer, fades staggered in **random** order, not left to right. |
 | 1.62 | 1.97 | `Jasper` | Typewriter in, same speed and caret. |
-| 2.00 | 2.15 | `[SHIFTS]` pill | Small rounded pill, fill `#E4EDFD`, label `#0A6BFF` at ~40% of the wordmark's size. Scales 85→100% on quint-out. |
+| 2.00 | 2.15 | `[SHIFTS]` pill | Rounded pill, fill `#E4EDFD`, label `#0A6BFF`, ~40% of the wordmark's size. Scales 85→100% on quint-out. |
 | 2.15 | 2.55 | Wordmark lockup | Hold. |
-| 2.55 | 3.30 | Wordmark lockup | **The dock.** Scale down to ~28% and travel up-left, landing exactly inside the empty header bar of the incoming Seedance panel. Match the panel's 8° tilt as it lands. Time this against the plate — scrub to find the frame the header bar reaches its resting position. |
-| 3.30 | 6.60 | Wordmark lockup | Parented to the panel. Track it manually with position keyframes as the plate pulls back. |
+| 2.55 | 3.30 | Wordmark lockup | **The dock.** Scale to ~28% and travel up-left, landing inside the empty top strip of the incoming panel. Match the panel's 8° tilt as it lands. Scrub the plate to find the frame the strip reaches rest. |
+| 3.30 | 6.60 | Wordmark lockup | Parented to the panel — track it with position keyframes as the plate pulls back. |
 | 4.30 | 4.85 | `Simple` | Hero-word: enters at 300% scale in `#0A6BFF`, centred in the empty left third. Holds at full size. |
-| 4.85 | 5.40 | `Simple` | Scales to 100% on quint-out while the dark layer resolves over the blue. Travels to its final position in the line. |
+| 4.85 | 5.40 | `Simple` | Scales to 100% on quint-out while the dark layer resolves over the blue. Travels to its place in the line. |
 | 5.42 | 5.62 | `, instant` | Cascade in (two-layer trick). |
-| 5.55 | 5.75 | `scheduling` | Cascade in, +0.13s behind the previous word. |
-| 6.10 | 6.30 | `for` | Second line begins cascading, +0.13s per word. |
+| 5.55 | 5.75 | `scheduling` | Cascade in, +0.13s behind. |
+| 6.10 | 6.30 | `for` | Second line begins, +0.13s per word. |
 | 6.23 | 6.43 | `teams` | |
 | 6.36 | 6.56 | `of` | |
 | 6.49 | 6.69 | `any` | |
@@ -166,66 +134,47 @@ Times in seconds against the 10s Seedance plate.
 | 7.50 | 7.80 | Both lines | Scattered per-glyph dissolve out. |
 | 8.70 | 8.90 | `Every` | End-card line, cascading beneath the icon. |
 | 8.83 | 9.03 | `shift` | |
-| 8.96 | 9.16 | `covered.` | Land this word in **`#0A6BFF`** and leave it blue — the reference inverts the hero move at the end and keeps its final phrase in accent. |
-| 9.16 | 10.00 | All | Hold to black. |
+| 8.96 | 9.16 | `covered.` | Land this word in **`#0A6BFF`** and leave it blue — the reference inverts the hero move at the end, keeping its final phrase in accent. |
+| 9.16 | 10.00 | All | Hold to end. |
 
 ### The reflow question
 
-In the reference, the line physically **re-centres** as each word lands — the
-earlier words slide left to make room. It is the most laborious part to
-reproduce and the easiest to skip.
+In the reference the line physically **re-centres** as each word lands — earlier
+words slide left to make room. Most laborious part to reproduce, easiest to skip.
 
-- **Simple version:** place every word at its final position from the start and
-  animate opacity only. At 0.13s stagger the eye barely registers the missing
-  reflow. Do this first.
+- **Simple version:** place every word at its final position and animate opacity
+  only. At 0.13s stagger the eye barely registers the missing reflow. Do this first.
 - **Faithful version:** add X-position keyframes to each word group, each
-  shifting left by half the width of the word that follows it, on the same
-  quint-out curve. Roughly 40 extra keyframes for this piece. Worth it only if
-  the spot is going somewhere that matters.
-
-Do the simple version, watch it against the reference, and upgrade only if the
-difference bothers you.
+  shifting left by half the width of the word that follows, on the same
+  quint-out curve. ~40 extra keyframes. Worth it only if the spot matters.
 
 ---
 
-## Risk points and fallbacks
+## 4. Judging a roll
 
-**1. The dock beat (2.55–3.30s) is the hard one.** It only works if Seedance
-delivers a genuinely empty header bar and a predictable settle position. If the
-plate comes back with the panel arriving at the wrong place or the header
-occupied:
+Check in this order and stop at the first failure — everything below is
+invalidated by anything above:
 
-- *Fallback A:* drop the dock entirely. Let the wordmark dissolve out on the
-  scatter exit, and have the panel simply rise into a clean frame. You lose the
-  cleverest move in the reference but nothing looks broken.
-- *Fallback B:* generate Shot 2 alone, several times, and pick the roll whose
-  panel settles furthest right — that gives you the most room to land the
-  wordmark and the widest empty left third.
+1. Is the background pure white, and the palette only white / grey / one blue?
+2. Are all panel surfaces blank — no attempted letterforms anywhere?
+3. Does the camera read as one continuous ease-out pull-back, no bounce?
+4. Is the left third of frame empty during the settled beat?
+5. Is the panel's top strip empty?
 
-**2. Seedance will probably sneak text into the panel anyway.** Small
-grey marks are what you want; actual attempted letterforms are not. If it
-produces legible garbage, re-roll rather than mask — the negative prompt is
-already heavy, so add `interface text, UI labels, menu items` to it and try
-again.
+Lock the seed as soon as 1–3 pass. Do not start compositing type until 4 passes —
+if the panel crowds the left third there is nowhere for the headline to go.
 
-**3. The empty left third.** Models drift toward centred compositions. If the
-panel lands too central and crowds the headline, either re-roll or accept it and
-move the headline to sit *above* the panel instead of beside it. Check this
-before you build any type.
+### If it still puts marks on the panel
 
-**4. Shot 1 is 2.4s of near-empty white.** That is deliberate — it is a clean
-plate for the opening type. If a roll wastes it or puts something ugly in it,
-just freeze a clean white frame in CapCut and extend it; you lose nothing.
+Swap the grid sentence for a plainer one — fewer nouns give it less to
+elaborate on:
 
-## Iteration order
+```
+The main body is a plain grid of small blank rounded rectangles in tints of electric blue #0A6BFF and neutral grey, seven columns by six rows, all surfaces smooth and empty.
+```
 
-Judge each roll in this order and stop at the first failure — everything below
-is invalidated by anything above it:
+### If the dock beat has nowhere to land
 
-1. Is the background pure white and the palette confined to white / grey / one blue?
-2. Does the camera move read as one continuous ease-out pull-back, with no bounce?
-3. Is the left third of frame empty during the settled beat?
-4. Is the panel header bar empty?
-5. Is all interface text illegible texture rather than attempted letterforms?
-
-Fix one, lock the seed, re-roll. Do not start compositing type until 1–3 pass.
+Drop it. Let the wordmark dissolve on the scatter exit at 1.60s and have the
+panel simply rise into a clean frame. You lose the cleverest move in the
+reference, but nothing looks broken.
